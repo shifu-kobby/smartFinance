@@ -1,7 +1,6 @@
 package com.example.smartfinance.presentation.components
 
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
@@ -11,6 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
 @Composable
@@ -20,11 +20,12 @@ fun IconButtonWithText(
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
     buttonColor: Color = MaterialTheme.colorScheme.primary, // Default color
-    contentColor: Color = Color.White, // Default text/icon color
+    contentColor: Color = Color.White, // Default text/icon color,
+    cornerSize: Dp = 8.dp
 ) {
     Button(
         onClick = onClick,
-        shape = RoundedCornerShape(8.dp),
+        shape = RoundedCornerShape(cornerSize),
         modifier = modifier,
         colors = ButtonDefaults.buttonColors(
             containerColor = buttonColor, // Background color
